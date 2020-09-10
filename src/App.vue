@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-main>
+      <v-row>
+        <v-col cols="8">
+          <currentWeather />
+        </v-col>
+        <v-col
+          cols="4"
+          style="background-color: black;padding:none;margin:none;"
+        >
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="10">
+          <forecastWeather />
+        </v-col>
+      </v-row>
+    </v-main>
+    <v-bottom-navigation>
+      <v-btn>
+        <span>Weather</span>
+        <v-icon>nature</v-icon>
+      </v-btn>
+      <v-btn>
+        <span>Forecast</span>
+        <v-icon>analytics</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import currentWeather from "@/components/currentWeather";
+import forecastWeather from "@/components/forecastWeather";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld
-  }
+  components: { currentWeather, forecastWeather },
+  data: () => ({
+    //
+  })
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+body {
+  margin: none;
+  box-sizing: border-box;
 }
 </style>
