@@ -1,28 +1,33 @@
 <template>
-  <div>
-    <v-row>
-      <v-col class="text-center" no-gutters>
-        <v-flex>
-          <v-chip
-            class="ma-2"
-            color="blue lighten-4"
-            label
-            text-color="blue-grey darken-3"
-          >
-            <v-icon left>label</v-icon>
-            USAF, CO
-          </v-chip>
-          <p style="font-size: 5rem;">
-            {{ Math.round(currentWeather.temp.value) }}&#176;
-          </p>
-          <p>
-            {{
-              "Feels Like: " + Math.round(currentWeather.feels_like.value)
-            }}&#176;
-          </p>
-          <div style="display:flex"></div>
-          <v-icon>{{ getWeatherIcon }}</v-icon>
-          <p>{{ currentWeather.weather_code.value }}</p>
+  <div class="fill-height">
+    <v-row class="fill-height">
+      <v-col>
+        <v-flex
+          class="fill-height text-center"
+          style="display: flex;flex-direction:row;justify-content:center;align-items:center;"
+        >
+          <v-container>
+            <v-chip
+              class="ma-2"
+              color="blue lighten-4"
+              label
+              text-color="blue-grey darken-3"
+            >
+              <v-icon left>label</v-icon>
+              USAF, CO
+            </v-chip>
+            <p style="font-size: 5rem;">
+              {{ Math.round(currentWeather.temp.value) }}&#176;
+            </p>
+            <p>
+              {{
+                "Feels Like: " + Math.round(currentWeather.feels_like.value)
+              }}&#176;
+            </p>
+            <div style="display:flex"></div>
+            <v-icon>{{ getWeatherIcon }}</v-icon>
+            <p>{{ currentWeather.weather_code.value }}</p>
+          </v-container>
         </v-flex>
       </v-col>
     </v-row>

@@ -5,14 +5,7 @@
         <v-col cols="8">
           <currentWeather />
         </v-col>
-        <v-col
-          cols="4"
-          style="background-color: black;padding:none;margin:none;"
-        >
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="10">
+        <v-col cols="4">
           <forecastWeather />
         </v-col>
       </v-row>
