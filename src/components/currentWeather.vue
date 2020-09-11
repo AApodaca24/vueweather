@@ -96,7 +96,7 @@ export default {
       return icon;
     }
   },
-  created() {
+  mounted() {
     this.getWeather();
   }
 };
