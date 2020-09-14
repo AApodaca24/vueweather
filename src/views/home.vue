@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row>
+    <v-row id="showcase">
       <v-col cols="8">
         <currentWeather />
       </v-col>
@@ -8,14 +8,14 @@
         <forecastWeather />
       </v-col>
     </v-row>
-    <v-row>
+    <v-row style="background-color:rgb(56, 56, 61);">
       <v-col></v-col>
       <v-col cols="10">
         <hourlyWeather />
       </v-col>
       <v-col></v-col>
     </v-row>
-    <v-row>
+    <v-row style="background-color:rgb(56, 56, 61);">
       <v-col></v-col>
       <v-col cols="10">
         <detailWeather />
@@ -37,4 +37,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#showcase {
+  background-image: url("https://wp-cpr.s3.amazonaws.com/uploads/2019/05/air_force.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

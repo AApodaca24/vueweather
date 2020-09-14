@@ -6,7 +6,9 @@
           class="fill-height text-center"
           style="display: flex;flex-direction:row;justify-content:center;align-items:center;"
         >
-          <v-container>
+          <v-container
+            style="background-color:rgba(0,0,0,.4);width:50%;margin: 0 auto;"
+          >
             <v-chip
               class="ma-2"
               color="blue lighten-4"
@@ -16,17 +18,19 @@
               <v-icon left>label</v-icon>
               USAF, CO
             </v-chip>
-            <p style="font-size: 5rem;">
+            <p style="font-size:5rem;font-weight:700;color:#f4f4f4;">
               {{ Math.round(currentWeather.temp.value) }}&#176;
             </p>
-            <p>
+            <p style="color:white;">
               {{
                 "Feels Like: " + Math.round(currentWeather.feels_like.value)
               }}&#176;
             </p>
             <div style="display:flex"></div>
-            <v-icon>{{ getWeatherIcon }}</v-icon>
-            <p>{{ currentWeather.weather_code.value }}</p>
+            <v-icon color="white">{{ getWeatherIcon }}</v-icon>
+            <p style="color:white; font-size:1.2rem;">
+              {{ currentWeather.weather_code.value }}
+            </p>
           </v-container>
         </v-flex>
       </v-col>
