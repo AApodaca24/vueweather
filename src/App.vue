@@ -3,14 +3,10 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-bottom-navigation>
-      <v-btn>
+    <v-bottom-navigation dark>
+      <v-btn :to="{ name: 'home' }">
         <span>Weather</span>
-        <v-icon>nature</v-icon>
-      </v-btn>
-      <v-btn :to="{ name: 'weatherMap' }">
-        <span>Weather Map</span>
-        <v-icon>map</v-icon>
+        <v-icon>mdi-weather-lightning-rainy</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </v-app>

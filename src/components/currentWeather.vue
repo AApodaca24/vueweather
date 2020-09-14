@@ -55,6 +55,7 @@ export default {
       };
       try {
         const { data } = await axios.get(url, { params: query });
+        console.log(data);
         this.currentWeather = data;
       } catch (err) {
         console.log(err);

@@ -3,15 +3,8 @@
     <v-row>
       <v-col cols="10" class="mx-auto">
         <v-flex xs12>
-          <v-card
-            class="mx-auto text-center"
-            max-width="200"
-            v-for="(f, index) in fiveday"
-            :key="index"
-            outlined
-            dark
-          >
-            <v-list-item three-line>
+          <v-card class="mx-auto text-center" max-width="200" outlined dark>
+            <v-list-item three-line v-for="(f, index) in fiveday" :key="index">
               <v-list-item-content>
                 <div class="overline mb-4" dark>
                   {{ formatDate(f.observation_time.value) }}
@@ -59,6 +52,7 @@ export default {
       };
       try {
         const { data } = await axios.get(url, { params: query });
+        console.log(data);
         this.forecast = data;
       } catch (err) {
         console.log(err);

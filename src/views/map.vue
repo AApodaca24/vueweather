@@ -1,15 +1,10 @@
 <template>
-  <div>
-    <weatherMap />
-  </div>
+  <div></div>
 </template>
 
 <script>
-import weatherMap from "../components/map";
-
 export default {
-  name: "map",
-  components: { weatherMap }
+  name: "map"
 };
 </script>
 
