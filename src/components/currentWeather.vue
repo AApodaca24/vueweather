@@ -27,8 +27,8 @@
               }}&#176;
             </p>
             <div style="display:flex"></div>
-            <v-icon color="white">{{ getWeatherIcon }}</v-icon>
-            <p style="color:white; font-size:1.2rem;">
+            <v-icon color="white" size="64">{{ getWeatherIcon }}</v-icon>
+            <p style="color:white;text-transform:uppercase;">
               {{ currentWeather.weather_code.value }}
             </p>
           </v-container>
@@ -101,7 +101,7 @@ export default {
       return icon;
     }
   },
-  mounted() {
+  created() {
     this.getWeather();
   }
 };

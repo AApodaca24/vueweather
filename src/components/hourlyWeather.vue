@@ -58,9 +58,9 @@ export default {
       }
     }
   },
-  mounted() {
+  created() {
     this.getWeather();
-  }
+  },
 };
 </script>
 

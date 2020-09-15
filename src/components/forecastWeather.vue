@@ -66,7 +66,7 @@ export default {
   },
   created() {
     this.getWeather();
-  }
+  },
 };
 </script>
 

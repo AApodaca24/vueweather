@@ -71,9 +71,9 @@ export default {
       }
     }
   },
-  mounted() {
+  created() {
     this.getData();
-  }
+  },
 };
 </script>
 
