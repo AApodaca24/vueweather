@@ -61,7 +61,7 @@ export default {
   },
   computed: {
     fiveday() {
-      return this.forecast.slice(0, 5);
+      return this.forecast.slice(1, 5);
     }
   },
   created() {
