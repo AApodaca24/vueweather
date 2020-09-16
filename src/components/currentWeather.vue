@@ -23,14 +23,11 @@
             </p>
             <p style="color:white;">
               {{
-                "Feels Like: " + Math.round(currentWeather.feels_like.value)
+                'Feels Like: ' + Math.round(currentWeather.feels_like.value)
               }}&#176;
             </p>
             <div style="display:flex"></div>
             <v-icon color="white" size="64">{{ getWeatherIcon }}</v-icon>
-            <p style="color:white;text-transform:uppercase;">
-              {{ currentWeather.weather_code.value }}
-            </p>
           </v-container>
         </v-flex>
       </v-col>
@@ -39,23 +36,23 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "currentWeather",
+  name: 'currentWeather',
   data: () => ({
-    currentWeather: []
+    currentWeather: [],
   }),
   methods: {
     async getWeather() {
-      const url = "https://api.climacell.co/v3/weather/realtime";
+      const url = 'https://api.climacell.co/v3/weather/realtime';
       const query = {
-        lat: "39.0069241",
-        lon: "-104.8850611",
-        unit_system: "us",
+        lat: '39.0069241',
+        lon: '-104.8850611',
+        unit_system: 'us',
         fields:
-          "temp,feels_like,humidity,precipitation,precipitation_type,weather_code",
-        apikey: "HMs69QUU9S4UvvrI90HqIHMLCNvZROvz"
+          'temp,feels_like,humidity,precipitation,precipitation_type,weather_code',
+        apikey: 'HMs69QUU9S4UvvrI90HqIHMLCNvZROvz',
       };
       try {
         const { data } = await axios.get(url, { params: query });
@@ -64,46 +61,60 @@ export default {
       } catch (err) {
         console.log(err);
       }
-    }
+    },
   },
   computed: {
     getWeatherIcon() {
       let icon;
       switch (this.currentWeather.weather_code.value) {
-        case "clear":
-          icon = "mdi-weather-sunny";
+        case 'clear':
+          icon = 'mdi-weather-sunny';
           break;
-        case "freezing_rain_heavy" ||
-          "freezing_rain" ||
-          "freezing_rain_light" ||
-          "freezing_drizzle":
-          icon = "mdi-weather-snowy-rainy";
+        case 'mostly_clear':
+          icon = 'mdi-weather-partly-cloudy';
           break;
-        case "ice_pellets_heavy" || "ice_pellets" || "ice_pellets_light":
-          icon = "mdi-weather-hail";
+        case 'freezing_rain_heavy':
+        case 'freezing_rain':
+        case 'freezing_rain_light':
+        case 'freezing_drizzle':
+          icon = 'mdi-weather-snowy-rainy';
           break;
-        case "snow_heavy" || "snow" || "snow_light" || "flurries":
-          icon = "mdi-weather-snowy-heavy";
+        case 'ice_pellets_heavy':
+        case 'ice_pellets':
+        case 'ice_pellets_light':
+          icon = 'mdi-weather-hail';
           break;
-        case "tstorm":
-          icon = "mdi-weather-lightning";
+        case 'snow_heavy':
+        case 'snow':
+        case 'snow_light':
+        case 'flurries':
+          icon = 'mdi-weather-snowy-heavy';
           break;
-        case "rain_heavy" || "rain" || "rain_light" || "drizzle":
-          icon = "mdi-weather-rainy";
+        case 'tstorm':
+          icon = 'mdi-weather-lightning';
           break;
-        case "fog_light" || "fog" || "cloudy" || "mostly_cloudy":
-          icon = "mdi-weather-fog";
+        case 'rain_heavy':
+        case 'rain':
+        case 'rain_light':
+        case 'drizzle':
+          icon = 'mdi-weather-rainy';
           break;
-        case "partly_cloudy" || "mostly_clear":
-          icon = "mdi-weather-partly-cloudly";
+        case 'fog_light':
+        case 'fog':
+        case 'cloudy':
+        case 'mostly_cloudy':
+          icon = 'mdi-weather-fog';
+          break;
+        case 'partly_cloudy':
+          icon = 'mdi-weather-partly-cloudy';
           break;
       }
       return icon;
-    }
+    },
   },
   created() {
     this.getWeather();
-  }
+  },
 };
 </script>
 
