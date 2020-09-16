@@ -69,9 +69,13 @@ export default {
   computed: {
     getWeatherIcon() {
       let icon;
+      console.log(this.currentWeather.weather_code.value);
       switch (this.currentWeather.weather_code.value) {
         case "clear":
           icon = "mdi-weather-sunny";
+          break;
+        case "mostly_clear":
+          icon = "mdi-weather-partly-cloudly";
           break;
         case "freezing_rain_heavy" ||
           "freezing_rain" ||
@@ -94,7 +98,7 @@ export default {
         case "fog_light" || "fog" || "cloudy" || "mostly_cloudy":
           icon = "mdi-weather-fog";
           break;
-        case "partly_cloudy" || "mostly_clear":
+        case "partly_cloudy":
           icon = "mdi-weather-partly-cloudly";
           break;
       }
