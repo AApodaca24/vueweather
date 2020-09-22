@@ -8,14 +8,14 @@
         <forecastWeather />
       </v-col>
     </v-row>
-    <v-row style="background-color:rgb(56, 56, 61);">
+    <v-row style="background-color:rgb(64, 64, 64);">
       <v-col></v-col>
       <v-col cols="10">
         <hourlyWeather />
       </v-col>
       <v-col></v-col>
     </v-row>
-    <v-row style="background-color:rgb(56, 56, 61);">
+    <v-row style="background-color:rgb(64, 64, 64);">
       <v-col></v-col>
       <v-col cols="10">
         <detailWeather />
